@@ -52,7 +52,6 @@
 
   No clock, no network. `digest-fn` is injected, as everywhere in this stack."
   (:require [asn1.core :as asn1]
-            [asn1.oid :as oid]
             [rfc3161.core :as ts]))
 
 (defn fail! [code message data]

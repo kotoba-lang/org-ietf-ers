@@ -36,7 +36,7 @@
 (ns ers.path-kotoba-parity-test
   (:require [asn1.core :as asn1]
             [clojure.java.io :as io]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is testing]]
             [ers.core :as ers]
             [ers.path-guest-document :refer [->doc]]
@@ -69,7 +69,7 @@
             (seq (.digest (java.security.MessageDigest/getInstance "SHA-256")
                           (byte-array (map unchecked-byte octets)))))))
 
-(defn- hex [octets] (str/lower-case (asn1/hex (vec octets))))
+(defn- hex [octets] (str/lower (asn1/hex (vec octets))))
 
 (defn- unhex [s]
   (mapv (fn [[a b]] (Integer/parseInt (str a b) 16))
@@ -199,10 +199,10 @@
             wrong without being detectably so. Folding it here would hide
             that the host handed over something it should not have."
     (let [path (path-of 4 0)
-          upper (mapv (fn [g] (mapv str/upper-case g)) path)]
+          upper (mapv (fn [g] (mapv str/upper g)) path)]
       (is (= :ers/non-lowercase-hex (:reason (walk upper (hex (nth (leaves 4) 0))))))
       (is (= :ers/non-lowercase-hex
-             (:reason (walk path (str/upper-case (hex (nth (leaves 4) 0))))))))))
+             (:reason (walk path (str/upper (hex (nth (leaves 4) 0))))))))))
 
 (deftest a-malformed-path-is-refused
   (testing "a group is a node and its sibling, or a node alone"

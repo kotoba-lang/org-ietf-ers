@@ -72,8 +72,8 @@ different claim from legal validity and should not be confused with it.
 ## Test
 
 ```bash
-clojure -M:test    # tree root vs an independent implementation; real openssl ts tokens
-clojure -M:lint
+kbb -M:test    # tree root vs an independent implementation; real openssl ts tokens
+kbb -M:lint
 ```
 
 Apache-2.0.

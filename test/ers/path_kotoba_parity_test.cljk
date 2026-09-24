@@ -35,7 +35,7 @@
 
 (ns ers.path-kotoba-parity-test
   (:require [asn1.core :as asn1]
-            [clojure.java.io :as io]
+            [kotoba.io :as io]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is testing]]
             [ers.core :as ers]
@@ -118,7 +118,7 @@
 ;; --- the tests ----------------------------------------------------------------
 
 (deftest guest-source-is-present
-  (is (.exists guest-file) (str "kotoba object not found at " guest-file)))
+  (is (io/exists? guest-file) (str "kotoba object not found at " guest-file)))
 
 (deftest the-guest-walks-to-the-root-the-oracle-built
   (testing "across shapes: a pair, an odd tree that promotes, a full four,

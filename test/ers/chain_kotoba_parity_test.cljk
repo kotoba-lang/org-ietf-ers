@@ -32,7 +32,7 @@
 ;;     skipped, and distinguishable from a signature that failed.
 
 (ns ers.chain-kotoba-parity-test
-  (:require [clojure.java.io :as io]
+  (:require [kotoba.io :as io]
             [kotoba.test :refer [deftest is testing]]
             [ers.chain-guest-document :refer [->doc]]
             [kotoba.compiler.core :as compiler]
@@ -87,7 +87,7 @@
 ;; --- the tests ----------------------------------------------------------------
 
 (deftest guest-source-is-present
-  (is (.exists guest-file) (str "kotoba object not found at " guest-file)))
+  (is (io/exists? guest-file) (str "kotoba object not found at " guest-file)))
 
 (deftest a-single-verified-chain-is-verified
   (let [v (verdict [[(ok 1000) (ok 2000)]] has-data)]

@@ -33,7 +33,7 @@
 
 (ns ers.chain-kotoba-parity-test
   (:require [clojure.java.io :as io]
-            [clojure.test :refer [deftest is testing]]
+            [kotoba.test :refer [deftest is testing]]
             [ers.chain-guest-document :refer [->doc]]
             [kotoba.compiler.core :as compiler]
             [kotoba.kir :as ir]))

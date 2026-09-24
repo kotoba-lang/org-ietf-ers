@@ -3,7 +3,7 @@
   computed (a nine-line Python script applying RFC 4998 §4.2's sorted
   concatenation), and the timestamps over it are real `openssl ts` tokens. A
   hash tree tested only against itself agrees with its own mistakes."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [asn1.core :as asn1]
             [cms.jvm :as jvm]
             [ers.core :as ers]

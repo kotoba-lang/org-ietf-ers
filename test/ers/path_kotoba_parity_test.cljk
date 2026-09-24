@@ -37,7 +37,7 @@
   (:require [asn1.core :as asn1]
             [clojure.java.io :as io]
             [kotoba.lang.text :as str]
-            [clojure.test :refer [deftest is testing]]
+            [kotoba.test :refer [deftest is testing]]
             [ers.core :as ers]
             [ers.path-guest-document :refer [->doc]]
             [kotoba.compiler.core :as compiler]

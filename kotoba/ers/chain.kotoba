@@ -189,7 +189,7 @@
           ;; that is not the same fact as a signature that failed.
           ;; `and` / `or` without a type annotation evaluate to i64, not
           ;; :bool, so a `document-bool` fed one traps "value is not a
-          ;; boolean" (measured 2026-08-31; CLAUDE.md records the same
+          ;; boolean" (measured 2026-08-31; AGENTS.md records the same
           ;; typing from the css port). Every boolean that reaches a
           ;; document constructor in this file is therefore an `if`.
           checkable (if (= kind :hash-renewal) (db state :has-data) true)
